@@ -1,1 +1,0 @@
-update ipr_navtable set chrCNChannels='14,15,16',chrFRChannels='18,19,20,21,22,23,24,25' where intType=0
