@@ -1,0 +1,7 @@
+button{BORDER-RIGHT: 2px groove; BORDER-TOP: 2px groove; BORDER-LEFT: 2px groove; BORDER-BOTTOM: 2px groove}
+input{border-color:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select")?"#333333":"")} 
+input{border-style:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select")?"solid":"")} 
+input{border-width:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select")?"1px":"")} 
+
+
+td{font-size:13px;font-family: Arial}

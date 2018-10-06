@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<Documents fileName="CN2017106717144A.XML" quantity="1" schemaVersion="V1.1.0" producer="ipph" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="\DTDS\ipphdb-documents.xsd">
+  <PatentDocument sequence="1" status="create">
+    <BibliographicData>
+      <PublicationInfo sequence="1" dataFormat="ipph">
+        <DocumentID>
+          <Country>CN</Country>
+          <Number>2017106717144</Number>
+          <Kind>A</Kind>
+          <Date>20170531</Date>
+        </DocumentID>
+      </PublicationInfo>
+      <PublicationInfo sequence="1" dataFormat="original">
+        <DocumentID>
+          <Country>CN</Country>
+          <Number>106717144</Number>
+          <Kind>A</Kind>
+          <Date>20170531</Date>
+        </DocumentID>
+      </PublicationInfo>
+      <ApplicationInfo sequence="1" dataFormat="ipph">
+        <DocumentID>
+          <Country>CN</Country>
+          <Number>201600011054231</Number>
+          <Date>20161125</Date>
+        </DocumentID>
+      </ApplicationInfo>
+      <ApplicationInfo sequence="1" dataFormat="original">
+        <DocumentID>
+          <Country>CN</Country>
+          <Number>201611054231.6</Number>
+          <Date>20161125</Date>
+        </DocumentID>
+      </ApplicationInfo>
+      <PublicDateAvailability>
+        <GazetteReference>
+          <GazetteNumber>33-2201</GazetteNumber>
+          <Date>20170531</Date>
+        </GazetteReference>
+        <UnexaminedNoGrantPrinted>
+          <DocumentID>
+            <Date>20170531</Date>
+          </DocumentID>
+        </UnexaminedNoGrantPrinted>
+        <RevocationDate>20361125</RevocationDate>
+      </PublicDateAvailability>
+      <ClassificationsIPCR>
+        <ClassificationIPCR sequence="1" dataFormat="ipph">
+          <IPCVersion>20060101</IPCVersion>
+          <Section>A</Section>
+          <MainClass>01</MainClass>
+          <SubClass>B</SubClass>
+          <MainGroup>1</MainGroup>
+          <SubGroup>02</SubGroup>
+          <GeneratingOffice>CN</GeneratingOffice>
+          <ClassificationDataSource>H</ClassificationDataSource>
+          <Text>A01B1/02</Text>
+        </ClassificationIPCR>
+        <ClassificationIPCR sequence="2" dataFormat="ipph">
+          <IPCVersion>20060101</IPCVersion>
+          <Section>A</Section>
+          <MainClass>01</MainClass>
+          <SubClass>B</SubClass>
+          <MainGroup>1</MainGroup>
+          <SubGroup>20</SubGroup>
+          <GeneratingOffice>CN</GeneratingOffice>
+          <ClassificationDataSource>H</ClassificationDataSource>
+          <Text>A01B1/20</Text>
+        </ClassificationIPCR>
+        <ClassificationIPCR sequence="3" dataFormat="ipph">
+          <IPCVersion>20060101</IPCVersion>
+          <Section>A</Section>
+          <MainClass>01</MainClass>
+          <SubClass>G</SubClass>
+          <MainGroup>25</MainGroup>
+          <SubGroup>14</SubGroup>
+          <GeneratingOffice>CN</GeneratingOffice>
+          <ClassificationDataSource>H</ClassificationDataSource>
+          <Text>A01G25/14</Text>
+        </ClassificationIPCR>
+      </ClassificationsIPCR>
+      <Title lang="zh" format="original">农业用小型翻地铲</Title>
+      <Parties>
+        <Applicants representative="1">
+          <Applicant sequence="1" organizationType="IME" applicantType="applicant" format="original">
+            <Name lang="zh">辽宁虹圆现代农业装备技术开发有限公司</Name>
+            <AddressBook lang="zh">
+              <Address>
+                <County>于洪区</County>
+                <City>沈阳市</City>
+                <Province>辽宁省</Province>
+                <Country>CN</Country>
+                <AreaCode>CN210114</AreaCode>
+                <PostCode>110000</PostCode>
+                <Text>110000 辽宁省沈阳市于洪区马三家街道范屯村</Text>
+              </Address>
+            </AddressBook>
+          </Applicant>
+        </Applicants>
+        <Inventors>
+          <Inventor sequence="1" format="original">
+            <Name lang="zh">黄文永</Name>
+          </Inventor>
+        </Inventors>
+        <Agents>
+          <Agency sequence="1" format="original">
+            <OrganizationName lang="zh">沈阳火炬专利事务所(普通合伙)</OrganizationName>
+          </Agency>
+          <Agent sequence="1" format="original">
+            <Name lang="zh">李福义</Name>
+          </Agent>
+        </Agents>
+      </Parties>
+      <StatisticalInfo>
+        <TotalPage>5</TotalPage>
+      </StatisticalInfo>
+    </BibliographicData>
+    <Abstract lang="zh" format="original">
+      <Paragraph number="0001">农业用小型翻地铲，包括第一水管、调节阀，铲杆，铲炳和第二水管；铲杆的中间固定焊接有第一水管，铲杆4的顶端水管处设置有调节阀，铲杆与铲炳固定连接，铲炳中间固定焊接第二水管，第一水管与第二水管联通设置，第一水管的另一端与蓄水装置连接本发明制造成本低，节省酷人力和物力；本发明装置结构简单，操作方便，使用安全。</Paragraph>
+      <AbstractFigure>
+        <Figure number="0001">
+          <Image he="421" wi="346" file="201611054231.GIF" imgContent="undefined" imgFormat="GIF">
+          </Image>
+        </Figure>
+      </AbstractFigure>
+    </Abstract>
+    <Keywords technicalField="abstract" subjectsNumber="8" lang="zh" format="original">
+      <Keyword sequence="1" lang="zh" pfq="8" dvalue="1">水管</Keyword>
+      <Keyword sequence="2" lang="zh" pfq="4" dvalue="0.60">铲杆</Keyword>
+      <Keyword sequence="3" lang="zh" pfq="2" dvalue="0.40">固定焊接</Keyword>
+      <Keyword sequence="4" lang="zh" pfq="1" dvalue="0.29">发明装置结构</Keyword>
+      <Keyword sequence="5" lang="zh" pfq="1" dvalue="0.27">蓄水装置</Keyword>
+      <Keyword sequence="6" lang="zh" pfq="1" dvalue="0.27">制造成本</Keyword>
+      <Keyword sequence="7" lang="zh" pfq="1" dvalue="0.26">翻地</Keyword>
+      <Keyword sequence="8" lang="zh" pfq="1" dvalue="0.24">联通</Keyword>
+    </Keywords>
+    <Keywords technicalField="description" subjectsNumber="36" lang="zh" format="original">
+      <Keyword sequence="1" lang="zh" pfq="27" dvalue="1">水管</Keyword>
+      <Keyword sequence="2" lang="zh" pfq="13" dvalue="0.54">铲杆</Keyword>
+      <Keyword sequence="3" lang="zh" pfq="6" dvalue="0.29">翻地</Keyword>
+      <Keyword sequence="4" lang="zh" pfq="6" dvalue="0.27">优选</Keyword>
+      <Keyword sequence="5" lang="zh" pfq="4" dvalue="0.22">范围设置</Keyword>
+      <Keyword sequence="6" lang="zh" pfq="4" dvalue="0.22">固定焊接</Keyword>
+      <Keyword sequence="7" lang="zh" pfq="4" dvalue="0.22">厚度设置</Keyword>
+      <Keyword sequence="8" lang="zh" pfq="4" dvalue="0.22">蓄水装置</Keyword>
+      <Keyword sequence="9" lang="zh" pfq="3" dvalue="0.17">制造成本</Keyword>
+      <Keyword sequence="10" lang="zh" pfq="6" dvalue="0.17">种植</Keyword>
+      <Keyword sequence="11" lang="zh" pfq="4" dvalue="0.16">育苗</Keyword>
+      <Keyword sequence="12" lang="zh" pfq="2" dvalue="0.14">发明装置结构</Keyword>
+      <Keyword sequence="13" lang="zh" pfq="2" dvalue="0.13">宽度设置</Keyword>
+      <Keyword sequence="14" lang="zh" pfq="2" dvalue="0.12">联通</Keyword>
+      <Keyword sequence="15" lang="zh" pfq="2" dvalue="0.10">浇水</Keyword>
+      <Keyword sequence="16" lang="zh" pfq="1" dvalue="0.09">农作物栽培</Keyword>
+      <Keyword sequence="17" lang="zh" pfq="1" dvalue="0.09">操作过程</Keyword>
+      <Keyword sequence="18" lang="zh" pfq="1" dvalue="0.09">功能单一</Keyword>
+      <Keyword sequence="19" lang="zh" pfq="1" dvalue="0.09">领域专业</Keyword>
+      <Keyword sequence="20" lang="zh" pfq="1" dvalue="0.09">人工管理</Keyword>
+      <Keyword sequence="21" lang="zh" pfq="1" dvalue="0.09">日常饮食</Keyword>
+      <Keyword sequence="22" lang="zh" pfq="1" dvalue="0.09">水流通过</Keyword>
+      <Keyword sequence="23" lang="zh" pfq="1" dvalue="0.09">一端连接</Keyword>
+      <Keyword sequence="24" lang="zh" pfq="1" dvalue="0.09">营养物质</Keyword>
+      <Keyword sequence="25" lang="zh" pfq="1" dvalue="0.09">专业技术</Keyword>
+      <Keyword sequence="26" lang="zh" pfq="1" dvalue="0.08">小水流</Keyword>
+      <Keyword sequence="27" lang="zh" pfq="1" dvalue="0.08">新颖性</Keyword>
+      <Keyword sequence="28" lang="zh" pfq="1" dvalue="0.08">除草</Keyword>
+      <Keyword sequence="29" lang="zh" pfq="1" dvalue="0.08">除虫</Keyword>
+      <Keyword sequence="30" lang="zh" pfq="1" dvalue="0.08">矿物</Keyword>
+      <Keyword sequence="31" lang="zh" pfq="1" dvalue="0.08">松土</Keyword>
+      <Keyword sequence="32" lang="zh" pfq="1" dvalue="0.07">维生素</Keyword>
+      <Keyword sequence="33" lang="zh" pfq="1" dvalue="0.07">施肥</Keyword>
+      <Keyword sequence="34" lang="zh" pfq="2" dvalue="0.05">管理</Keyword>
+      <Keyword sequence="35" lang="zh" pfq="1" dvalue="0.05">土地</Keyword>
+      <Keyword sequence="36" lang="zh" pfq="1" dvalue="0.05">脱离</Keyword>
+    </Keywords>
+    <Keywords technicalField="claims" subjectsNumber="9" lang="zh" format="original">
+      <Keyword sequence="1" lang="zh" pfq="11" dvalue="1">水管</Keyword>
+      <Keyword sequence="2" lang="zh" pfq="6" dvalue="0.63">铲杆</Keyword>
+      <Keyword sequence="3" lang="zh" pfq="4" dvalue="0.48">翻地</Keyword>
+      <Keyword sequence="4" lang="zh" pfq="2" dvalue="0.30">范围设置</Keyword>
+      <Keyword sequence="5" lang="zh" pfq="2" dvalue="0.30">固定焊接</Keyword>
+      <Keyword sequence="6" lang="zh" pfq="2" dvalue="0.30">厚度设置</Keyword>
+      <Keyword sequence="7" lang="zh" pfq="1" dvalue="0.20">宽度设置</Keyword>
+      <Keyword sequence="8" lang="zh" pfq="1" dvalue="0.20">蓄水装置</Keyword>
+      <Keyword sequence="9" lang="zh" pfq="1" dvalue="0.18">联通</Keyword>
+    </Keywords>
+    <Keywords technicalField="title" subjectsNumber="1" lang="zh" format="original">
+      <Keyword sequence="1" lang="zh" pfq="1" dvalue="1">翻地</Keyword>
+    </Keywords>
+  </PatentDocument>
+</Documents>

@@ -1,0 +1,16 @@
+button{BORDER-RIGHT: 2px groove; BORDER-TOP: 2px groove; BORDER-LEFT: 2px groove; BORDER-BOTTOM: 2px groove}
+input{cursor:expression((this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select" || this.type=="reset")?"hand":"")}
+input{border-color:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select" || this.type=="reset")?"#333333":"")}
+input{background-color:expression((this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select" || this.type=="reset")?"#efefef":"")}
+input{font-size:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select" || this.type=="reset")?"10pt":"")}
+input{border-style:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select" || this.type=="reset")?"solid":"")}
+input{border-width:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select" || this.type=="reset")?"1":"")}
+
+textarea{color: black;font-size:10pt;border-style:solid;border-width:1}
+
+td{font-size:13px;font-family: Arial}
+
+
+input{border-color:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select" || this.type=="reset")?"#333333":"")} 
+input{border-style:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select" || this.type=="reset")?"solid":"")} 
+input{border-width:expression((this.type=="text" || this.type=="password" || this.type=="button" || this.type=="submit" || this.type=="select" || this.type=="reset")?"1px":"")} 

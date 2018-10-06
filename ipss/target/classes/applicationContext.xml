@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xmlns:tx="http://www.springframework.org/schema/tx"
+ xmlns:mvc="http://www.springframework.org/schema/mvc"
+ xmlns:task="http://www.springframework.org/schema/task"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-3.0.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+      http://www.springframework.org/schema/task
+      http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+      
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property>
+		<property name="url"><value>jdbc:mysql://127.0.0.1:3306/ipph?characterEncoding=utf-8</value></property>
+		<property name="username"><value>root</value></property>
+		<property name="password"><value>root</value></property>
+	    <property name="initialSize"><value>20</value></property>               <!-- 初始化连接数 -->          
+        <property name="maxActive"><value>100</value></property>                <!-- 最大连接数量 -->      
+        <property name="maxIdle"><value>50</value></property>                   <!-- 最大空闲连接 -->
+        <property name="minIdle"><value>20</value></property>                   <!-- 最小空闲连接 -->
+        <property name="maxWait"><value>10000</value></property>                <!-- 超时等待时间以毫秒为单位,代表当Connection用尽了，多久之后进行回收丢失连接 -->
+		
+        <!-- to non-closed pool connection -->
+        <property name="removeAbandoned"><value>true</value></property>         <!-- 是否自动回收超时连接 -->
+        <property name="logAbandoned"><value>true</value></property>            <!-- 是否在自动回收超时连接的时候打印连接的超时错误 -->
+        <property name="removeAbandonedTimeout"><value>60</value></property>    <!-- 自动回收超时连接的超时时间,以秒为单位 -->
+
+        <!-- to active pool connection -->
+        <property name="timeBetweenEvictionRunsMillis"><value>900000</value></property>         <!-- 每隔$timeBetweenEvictionRunsMillis毫秒检查一次连接池中空闲的连接 -->
+        <property name="minEvictableIdleTimeMillis"><value>1800000</value></property>   <!-- 连接池中链接可空闲的时间,接上,这两个属性必须一起使用,当超过$minEvictableIdleTimeMillis时,自动断开超过空闲时间的链接，直到减少到minIdle为止 -->
+        <property name="numTestsPerEvictionRun"><value>100</value></property>                   <!-- 每一次检查多少个对象 -->
+	</bean>
+	
+		<!-- 创建JDBC模板 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+
+	<bean name="analyseMenu" class="com.cnipr.cniprgz.struts.action.AnalyseMenuAction">
+		<property name="analyseMenuFunc">
+			<ref bean="analyseMenuFunc" />
+		</property>
+	</bean>
+	
+	<bean name="login" class="com.cnipr.cniprgz.struts.action.LoginAction">
+		<property name="sysUserFunc">
+			<ref bean="sysUserFunc" />
+		</property>
+	</bean>
+	
+	<bean name="main" class="com.cnipr.cniprgz.struts.action.MainAction">
+		<property name="visitFunc">
+				<ref bean="visitFunc" />
+		</property>
+	</bean>
+	
+	<bean name="hangye" class="com.cnipr.cniprgz.struts.action.HangyeAction">
+		<property name="nodeFunc">
+			<ref bean="nodeFunc" />
+		</property>		
+		<property name="hangyeFunc">
+			<ref bean="hangyeFunc" />
+		</property>		
+	</bean>
+
+	<bean name="treenode" class="com.cnipr.cniprgz.struts.action.TreeNodeAction">
+		<property name="nodeFunc">
+			<ref bean="nodeFunc" />
+		</property>
+	</bean>
+
+	<bean name="gmjjNode" class="com.cnipr.cniprgz.struts.action.GmjjNodeAction">
+		<property name="gmjjFunc">
+			<ref bean="gmjjFunc" />
+		</property>
+	</bean>
+		
+	<bean name="/menu" class="com.cnipr.cniprgz.struts.action.MenuAction">
+		<property name="menuFunc">
+			<ref bean="menuFunc" />
+		</property>
+	</bean>
+	
+	<bean name="showSearchForm" class="com.cnipr.cniprgz.struts.action.SearchAction">
+		<property name="channelFunc">
+			<ref bean="channelFunc" />
+		</property>
+	</bean>
+
+	<bean name="globalinterceptor" class="com.cnipr.cniprgz.interceptor.GlobalInterceptor">
+		<property name="channelFunc">
+			<ref bean="channelFunc" />
+		</property>
+	</bean>
+	
+	<bean name="overviewSearch" class="com.cnipr.cniprgz.struts.action.SearchAction">
+		<property name="channelFunc">
+			<ref bean="channelFunc" />
+		</property>
+		
+		<property name="flztFunc">
+			<ref bean="flztFunc" />
+		</property>
+		
+		<property name="expFunc">
+			<ref bean="expFunc" />
+		</property>
+		
+		<property name="searchFunc">
+			<ref bean="searchFunc" />
+		</property>
+		
+		<property name="nodeFunc">
+			<ref bean="nodeFunc" />
+		</property>
+		
+		<property name="downloadFunc">
+			<ref bean="downloadFunc" />
+		</property>
+		
+		<!-- 智能检索 -->
+		<property name="semanticSearchImpl">
+			<ref bean="semanticSearchImpl"/>
+		</property>
+		<property name="semanticDao">
+			<ref bean="semanticDao"/>
+		</property>
+		<property name="sysUserFunc">
+			<ref bean="sysUserFunc" />
+		</property>
+		
+		<property name="channelDAO">
+			<ref bean="channelDAO" />
+		</property>
+	</bean>
+
+	<bean name="/download" class="com.cnipr.cniprgz.struts.action.DownLoadAction">
+		<property name="downloadFunc">
+			<ref bean="downloadFunc" />
+		</property>
+		<property name="channelFunc">
+			<ref bean="channelFunc" />
+		</property>
+		<property name="expFunc">
+			<ref bean="expFunc" />
+		</property>
+		<property name="searchFunc">
+			<ref bean="searchFunc" />
+		</property>
+		<property name="sysUserFunc">
+			<ref bean="sysUserFunc" />
+		</property>
+		<!-- 智能检索 -->
+		<property name="semanticSearchImpl">
+			<ref bean="semanticSearchImpl"/>
+		</property>
+		<property name="semanticDao">
+			<ref bean="semanticDao"/>
+		</property>
+	</bean>
+		
+	<bean name="exp" class="com.cnipr.cniprgz.struts.action.ExpressionAction">
+		<property name="expFunc">
+			<ref bean="expFunc" />
+		</property>
+	</bean>
+
+	<!-- function -->
+	<bean id="ipdenyFunc"
+		class="com.cnipr.cniprgz.func.IPDenyFunc">
+		<property name="ipdenyDAO">
+			<ref bean="ipdenyDAO" />
+		</property>
+	</bean>	
+	
+	<bean id="visitFunc"
+		class="com.cnipr.cniprgz.func.VisitCountFunc">
+		<property name="pageDAO">
+			<ref bean="pageDAO" />
+		</property>
+	</bean>	
+
+	<bean id="hangyeFunc" class="com.cnipr.cniprgz.func.HangyeFunc">
+		<property name="navtableDAO">
+			<ref bean="navtableDAO" />
+		</property>
+	</bean>
+	
+	<bean id="nodeFunc" class="com.cnipr.cniprgz.func.NodeFunc">
+		<property name="nodeDAO">
+			<ref bean="nodeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="gmjjFunc" class="com.cnipr.cniprgz.func.GmjjFunc">
+		<property name="gmjjDao">
+			<ref bean="gmjjDao" />
+		</property>
+	</bean>
+		
+	<bean id="analyseMenuFunc" class="com.cnipr.cniprgz.func.AnalyseMenuFunc">
+		<property name="analyseMenuDAO">
+			<ref bean="analyseMenuDAO" />
+		</property>
+	</bean>
+		
+	<bean id="searchFunc"
+		class="com.cnipr.cniprgz.func.search.SearchFunc">
+	</bean>
+	
+	<bean id="menuFunc"
+		class="com.cnipr.cniprgz.func.MenuFunc">
+		<property name="menuDAO">
+			<ref bean="menuDAO" />
+		</property>
+	</bean>
+	
+	<bean id="sysUserFunc" class="com.cnipr.cniprgz.func.SysUserFunc">
+		<property name="iprUserDAO">
+			<ref bean="iprUserDAO" />
+		</property>
+	</bean>
+	
+	
+	<bean id="channelFunc"
+		class="com.cnipr.cniprgz.func.ChannelFunc">
+		<property name="channelDAO">
+			<ref bean="channelDAO" />
+		</property>
+	</bean>
+	
+	<bean id="areacodeFunc" class="com.cnipr.cniprgz.func.AreacodeFunc">
+		<property name="areacodeDAO">
+			<ref bean="areacodeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="favoriteFunc"
+		class="com.cnipr.cniprgz.func.FavoriteFunc">
+		<property name="favoriteDAO">
+			<ref bean="favoriteDAO" />
+		</property>
+	</bean>
+	
+	<bean id="dwrTree"
+		class="com.cnipr.cniprgz.commons.tree.DwrTreeBB">
+		<property name="treeDAO">
+			<ref bean="treeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="expFunc"
+		class="com.cnipr.cniprgz.func.ExpressionFunc">
+		<property name="expDAO">
+			<ref bean="expDAO" />
+		</property>
+		<property name="iprUserDAO">
+			<ref bean="iprUserDAO" />
+		</property>
+	</bean>
+	
+	<bean id="downloadFunc"
+		class="com.cnipr.cniprgz.func.DownloadFunc">
+		<property name="searchFunc">
+			<ref bean="searchFunc" />
+		</property>
+	</bean>
+	
+	<bean id="xmlFunc"
+		class="com.cnipr.cniprgz.func.xml.XMLFunc">
+		<property name="searchFunc">
+			<ref bean="searchFunc" />
+		</property>
+	</bean>
+	
+	<bean id="printFunc"
+		class="com.cnipr.cniprgz.func.print.PrintFunc">
+		<property name="searchFunc">
+			<ref bean="searchFunc" />
+		</property>
+	</bean>
+	
+	<bean id="flztFunc"
+		class="com.cnipr.cniprgz.func.FlztFunc">
+		<property name="flztDAO">
+			<ref bean="flztDAO" />
+		</property>
+	</bean>	
+	
+		
+	<!-- DAO -->
+	
+	<bean id="ipdenyDAO" class="com.cnipr.cniprgz.dao.IPDenyDAO"></bean>
+	
+	<bean id="analyseMenuDAO" class="com.cnipr.cniprgz.dao.AnalyseMenuDAO"></bean>
+	
+	<bean id="nodeDAO" class="com.cnipr.cniprgz.dao.NodeDAO"></bean>
+	
+	<bean id="gmjjDao" class="com.cnipr.cniprgz.dao.GmjjDAO"></bean>
+	
+	<bean id="pageDAO" class="com.cnipr.cniprgz.dao.WebPageDAO"></bean>
+	
+	<bean id="iprUserDAO" class="com.cnipr.cniprgz.dao.IprUserDAO"></bean>
+	
+	<bean id="menuDAO" class="com.cnipr.cniprgz.dao.MenuDAO"></bean>
+	
+	<bean id="treeDAO" class="com.cnipr.cniprgz.dao.TreeDAO"></bean>
+	
+	<bean id="channelDAO" class="com.cnipr.cniprgz.dao.ChannelDAO">
+	</bean>
+	
+	<bean id="favoriteDAO" class="com.cnipr.cniprgz.dao.FavoriteDAO">
+	</bean>
+	
+	<bean id="expDAO" class="com.cnipr.cniprgz.dao.ExpressionDAO">
+	</bean>
+	
+	<bean id="areacodeDAO" class="com.cnipr.cniprgz.dao.AreacodeDAO">
+	</bean>
+	
+	<bean id="flztDAO" class="com.cnipr.cniprgz.dao.FlztDAO">
+	</bean>
+	
+	<bean id="simpleWarnDAO" class="com.cnipr.cniprgz.dao.TSimpleWarnDAO">
+	</bean>	
+	
+	<bean id="navtableDAO" class="com.cnipr.cniprgz.dao.NavtableDAO">
+	</bean>	
+	
+	<!-- 智能检索 -->
+	
+	<bean id="semanticSearchImpl" class="com.cnipr.cniprgz.func.search.SemanticSearch">
+	</bean>
+	
+	<bean name="/helper/getWordTips" class="com.cnipr.cniprgz.struts.action.PatentWordtips">
+		<property name="semanticSearchImpl">
+			<ref bean="semanticSearchImpl" />
+		</property>
+	</bean>
+	<bean id="semanticDao" class="com.cnipr.cniprgz.dao.RelevanceQueryDao">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+		
+</beans>

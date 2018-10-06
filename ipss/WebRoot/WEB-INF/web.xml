@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_9" version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+<context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+</context-param>
+
+	<filter>
+		<filter-name>IpDenyFilter</filter-name>
+		<filter-class>com.IpDenyFilter</filter-class>
+		<init-param>
+			<param-name>limitSecond</param-name>
+			<param-value>60</param-value>
+		</init-param>
+		<init-param>
+			<param-name>limitTime</param-name>
+			<param-value>300</param-value>
+		</init-param>
+		<init-param>
+			<param-name>toStopSecond</param-name>
+			<param-value>3600</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>IpDenyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+	    <filter-name>CharFilter</filter-name>  
+	    <filter-class>com.cnipr.cniprgz.filter.CharFilter</filter-class>  
+  	</filter>
+  
+	<filter-mapping>  
+		<filter-name>CharFilter</filter-name>  
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+ 
+  <filter>  
+    <filter-name>urlFilter</filter-name>  
+    <filter-class>com.cnipr.cniprgz.filter.urlFilter</filter-class>  
+  </filter>
+  <filter-mapping>  
+    <filter-name>urlFilter</filter-name>  
+    <url-pattern>/getUserList.do</url-pattern>  
+  </filter-mapping>
+  <filter-mapping>  
+    <filter-name>urlFilter</filter-name>  
+    <url-pattern>/getAdminList.do</url-pattern>  
+  </filter-mapping>
+  <filter-mapping>  
+    <filter-name>urlFilter</filter-name>  
+    <url-pattern>/hangyemanage.do</url-pattern>  
+  </filter-mapping>
+  <filter-mapping>  
+    <filter-name>urlFilter</filter-name>  
+    <url-pattern>/statmanage.do</url-pattern>  
+  </filter-mapping>
+ 
+ 
+	<servlet>
+	    <servlet-name>AuthImage</servlet-name>
+	    <servlet-class>com.cnipr.cniprgz.servlet.AuthImageServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+	    <servlet-name>AuthImage</servlet-name>
+	    <url-pattern>/authImage</url-pattern>
+  	</servlet-mapping>
+  	
+	<servlet>
+	    <servlet-name>PatentDetailImage</servlet-name>
+	    <servlet-class>com.cnipr.cniprgz.servlet.PatentDetailImageServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+	    <servlet-name>PatentDetailImage</servlet-name>
+	    <url-pattern>/patentDetailImage</url-pattern>
+  	</servlet-mapping>
+
+<listener>
+    <listener-class>
+        org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+</listener>
+<!-- 
+<listener>
+   <listener-class>
+        com.cnipr.cniprgz.listener.impl.SimpleWarnListener
+   </listener-class>
+</listener>
+ -->
+	<servlet>
+    	<servlet-name>monitor</servlet-name>
+    	<servlet-class>com.cnipr.monitor.MonitorThread</servlet-class>
+		<load-on-startup>1</load-on-startup>
+  	</servlet>
+	<servlet-mapping>
+		<servlet-name>
+			monitor
+		</servlet-name>
+		<url-pattern>
+			/monitor
+		</url-pattern>
+	</servlet-mapping>
+
+
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>
+			com.cnipr.cniprgz.filter.SetCharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+
+<!-- 
+	<filter>
+        <filter-name>XssFilter</filter-name>
+        <filter-class>com.cnipr.cniprgz.filter.XssFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>XssFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>    
+
+	<filter>
+		<filter-name>Authentication</filter-name>
+		<filter-class>
+			com.cnipr.cniprgz.filter.AuthenticationFilter
+		</filter-class>
+		<init-param>
+			<param-name>onError</param-name>
+			<param-value>/index.htm</param-value>
+		</init-param>
+	</filter>
+   
+	
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>Authentication</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+ -->
+ 
+    <filter>
+    	<filter-name>struts2</filter-name>
+    	<filter-class>
+    		org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+    	</filter-class>
+    </filter>
+    <filter-mapping>
+    	<filter-name>struts2</filter-name>
+    	<url-pattern>*.do</url-pattern>
+    </filter-mapping>
+	<filter-mapping>  
+		<filter-name>struts2</filter-name>  
+		<url-pattern>*.jsp</url-pattern>  
+	</filter-mapping>
+
+<!-- 
+<filter> 
+    <filter-name>LoginFilter</filter-name> 
+    <filter-class>com.cnipr.cniprgz.filter.LoginFilter</filter-class> 
+</filter> 
+<filter-mapping> 
+   <filter-name>LoginFilter</filter-name> 
+   <url-pattern>/*</url-pattern>
+</filter-mapping>
+ -->
+
+ 
+<!--
+	<servlet>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>
+			org.directwebremoting.servlet.DwrServlet
+		</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>activeReverseAjaxEnabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>
+				initApplicationScopeCreatorsAtStartup
+			</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>maxWaitAfterWrite</param-name>
+			<param-value>500</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+ -->
+<!--
+	<servlet>
+		<description>This is the description of my J2EE component
+		</description>
+		<display-name>This is the display name of my J2EE component
+		</display-name>
+		<servlet-name>Charge</servlet-name>
+		<servlet-class>com.cnipr.cniprgz.servlet.Charge</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>CniprProxyServlet</servlet-name>
+    <servlet-class>com.cnipr.cniprgz.servlet.proxy.CniprProxyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>testlog</servlet-name>
+    <servlet-class>test.testlog</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Log74Servlet</servlet-name>
+    <servlet-class>com.cnipr.cniprgz.log.Log74Servlet</servlet-class>
+  </servlet>
+	<servlet>
+		<servlet-name>log74INIT</servlet-name>
+		<servlet-class>com.cnipr.cniprgz.log.Log74INIT</servlet-class> 
+		 <load-on-startup>1</load-on-startup>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>SystemINIT</servlet-name>
+		<servlet-class>com.cnipr.cniprgz.servlet.SystemINIT</servlet-class> 
+		 <load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ajaxVisitServlet</servlet-name>
+    	<servlet-class>com.web.visit.ajaxVisitServlet</servlet-class> 
+  	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>XssFilter</servlet-name>
+    <servlet-class>com.cnipr.safe.XssFilter</servlet-class>
+  </servlet>
+
+  	
+  	<servlet-mapping>
+		<servlet-name>ajaxVisitServlet</servlet-name>
+		<url-pattern>/ajaxVisitServlet</url-pattern>
+	</servlet-mapping>
+-->
+	
+<!-- 
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+ -->
+ 
+ <!--
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+ -->
+<!--
+	<servlet-mapping>
+		<servlet-name>Charge</servlet-name>
+		<url-pattern>/charge</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CniprProxyServlet</servlet-name>
+    <url-pattern>/cniprProxy.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>testlog</servlet-name>
+    <url-pattern>/testlog</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Log74Servlet</servlet-name>
+    <url-pattern>/Log74Servlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XssFilter</servlet-name>
+    <url-pattern>/servlet/XssFilter</url-pattern>
+  </servlet-mapping>
+ -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<!-- Common Page -->
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+	
+<jsp-config>
+	<taglib>
+		<taglib-uri>http://displaytag.sourceforge.net/</taglib-uri>
+		<taglib-location>
+			/WEB-INF/taglib/displaytag-11.tld
+		</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+		<taglib-location>/WEB-INF/taglib/c.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/format</taglib-uri>
+		<taglib-location>/WEB-INF/taglib/format.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/fmt.tld</taglib-uri>
+		<taglib-location>/WEB-INF/taglib/fmt.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+		<taglib-location>
+			/WEB-INF/taglib/struts-html.tld
+		</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+		<taglib-location>
+			/WEB-INF/taglib/struts-bean.tld
+		</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+		<taglib-location>
+			/WEB-INF/taglib/struts-logic.tld
+		</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-tiles.tld</taglib-uri>
+		<taglib-location>
+			/WEB-INF/taglib/struts-tiles.tld
+		</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/n.tld</taglib-uri>
+		<taglib-location>
+			/WEB-INF/taglib/n.tld
+		</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/tb.tld</taglib-uri>
+		<taglib-location>
+			/WEB-INF/taglib/tb.tld
+		</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/section.tld</taglib-uri>
+		<taglib-location>
+			/WEB-INF/taglib/section.tld
+		</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/detail.tld</taglib-uri>
+		<taglib-location>
+			/WEB-INF/taglib/detail.tld
+		</taglib-location>
+	</taglib>
+</jsp-config>
+
+  <servlet>
+    <description></description>
+    <display-name>ReporterServlet</display-name>
+    <servlet-name>ReporterServlet</servlet-name>
+    <servlet-class>com.cnipr.cniprgz.servlet.ReporterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReporterServlet</servlet-name>
+    <url-pattern>/ReporterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchReportServlet</display-name>
+    <servlet-name>SearchReportServlet</servlet-name>
+    <servlet-class>com.cnipr.cniprgz.servlet.SearchReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchReportServlet</servlet-name>
+    <url-pattern>/SearchReportServlet</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <description></description>
+    <display-name>SaveImageServlet</display-name>
+    <servlet-name>SaveImageServlet</servlet-name>
+    <servlet-class>com.cnipr.cniprgz.servlet.SaveImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveImageServlet</servlet-name>
+    <url-pattern>/SaveImageServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
+

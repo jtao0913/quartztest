@@ -1,0 +1,57 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+}
+.ha_all {
+	background-image: url(images/liaoning/ln.jpg);
+	background-repeat: no-repeat;
+	height: 600px;
+	width: 998px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.login {
+	position: relative;
+	left: 465px;
+	top: 270px;
+	height: auto;
+	width: 200px;
+}
+.border {
+	height: 19px;
+	width: 110px;
+	margin-left: 10px;
+	border: 1px solid #176AB6;
+}
+ul,li,p{
+margin:0px;
+padding:0px;}
+.m_t1{
+margin-top:12px;
+}
+.p_l1{
+padding-left:80px;}
+.m_r1{
+margin-right:15px;
+}
+.a1 {
+	color: #DD8047;
+	text-decoration: underline;
+	position: relative;
+	left: 113px;
+	top: 33px;
+	*left: 113px;
+	*top: 28px;
+}
+.a1:hover
+{
+color:#FF0000;}
+.ha_bottom {
+font-size:14px;
+	color: #2C8DD1;
+	text-align: center;
+}

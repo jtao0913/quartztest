@@ -1,0 +1,12 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #006987; SCROLLBAR-HIGHLIGHT-COLOR: #009ec3; SCROLLBAR-SHADOW-COLOR: #004963; SCROLLBAR-3DLIGHT-COLOR: #445555; SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-TRACK-COLOR: #088EB5; SCROLLBAR-DARKSHADOW-COLOR: black
+}
+td {  font-size: 9pt}
+.mNull {  border: #F1C409; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+.mOver {  border-color: #FDF3CC #B69307 #B69307 #FDF3CC; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+.mDown {  border-color: #B69307 #FDF3CC #FDF3CC #B69307; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+.menuBorder {  border-color: #FDF3CC #B69307 #B69307 #FDF3CC; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px}
+
+.menu_mouseOver{  background-color: #ff6d00; color: white; cursor: hand}
+.menu_mouseOut{  color: black}
+.login_input {  height: 17px; width: 60px; border: #000000; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; font-size: 9pt}

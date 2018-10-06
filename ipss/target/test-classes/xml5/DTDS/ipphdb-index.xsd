@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Index">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Package" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="md5Code" use="required"/>
+						<xs:attribute name="quantity" use="required"/>
+						<xs:attribute name="volume" use="required"/>
+						<xs:attribute name="fileName" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="dateExchange" use="required"/>
+			<xs:attribute name="count" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Content">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DocLists" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DocList" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Images" minOccurs="0" maxOccurs="2">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Image" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="sequence" use="required"/>
+															<xs:attribute name="fileName" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="type" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="drawing"/>
+															<xs:enumeration value="illustration"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="appNum" use="required"/>
+									<xs:attribute name="appDate" use="required"/>
+									<xs:attribute name="pubNum"/>
+									<xs:attribute name="pubDate"/>
+									<xs:attribute name="ipphAppNum"/>
+									<xs:attribute name="ipphPubNum"/>
+									<xs:attribute name="pathName"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="status" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="create"/>
+									<xs:enumeration value="update"/>
+									<xs:enumeration value="delete"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="count" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="dateExchange" use="required"/>
+			<xs:attribute name="count" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+a{text-decoration:none; color:#000;}
+a:hover{text-decoration:underline; color:#f00;}
+
+.clear{clear:both; width:100%; height:1px; margin-top:-1px; overflow:hidden;}
+
+.top{width:1240px; height:128px; margin:0 auto; background:url(../images/banner_main.jpg) no-repeat;}
+.top div{padding-right:131px; margin-top:91px;}
+.top div span{display:block; float:right; line-height:28px; color:#24357a; font-weight:bold; margin-left:10px;}
+.top div span .btnLogin{width:46px; height:28px; border:none; background:url(../images/btnLogin.jpg) no-repeat; display:inline; float:left;}
+.top div span .textInput{border:1px solid #bdbec0; background:#fff; width:95px; height:25px; line-height:25px; display:inline; float:left;}
+
+.content{width:1240px; height:640px; margin:0 auto; background:url(../images/bg_main.jpg) repeat-x;}
+.left{width:454px; float:left; display:inline; margin-top:40px; margin-left:100px; margin-right:100px;}
+.title1{width:100%; font-size:16px; font-weight:bold; color:#233678; background:url(../images/li1_main.gif) 0px 3px no-repeat; text-indent:30px; margin-bottom:20px;}
+.left ul{list-style:none; width:424px; height:50px; margin-left:30px; margin-bottom:20px;}
+.left ul li{float:left; padding-right:11px;}
+.left ul li a{font-size:14px; color:#253479;}
+.left ul li a:hover{font-weight:bold; text-decoration:underline;}
+.title2{width:100%; height:50px; margin-top:25px; background:url(../images/li1_main.gif) 0px 12px no-repeat;}
+.left img{display:block; padding-left:30px;}
+
+.right{width:480px; float:left; margin-top:40px;}
+.right ul{list-style:none;}
+.right ul li{float:left; width:214px; height:50px; margin-right:25px; margin-bottom:15px;}
+.right ul li a{display:block; width:214px; height:50px; background:url(../images/btnBg1_main.gif) no-repeat; text-align:center; line-height:50px; font-size:14px; color:#253479; font-weight:bold;}
+.right ul li a:hover{background:url(../images/btnBg2_main.gif) no-repeat; color:#fff; text-decoration:none;}
+
+.foot{width:1240px; height:57px; line-height:57px; text-align:center; font-size:14px; color:#fff; background:#5c5c5c; margin:0 auto;}

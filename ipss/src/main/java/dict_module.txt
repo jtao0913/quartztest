@@ -1,0 +1,13 @@
+/**系统功能定义*/
+moduleId=1500;moduleName=行业分类导航
+moduleId=2500;moduleName=中国法律状态检索
+moduleId=1005;moduleName=表格检索【中国】
+moduleId=1010;moduleName=表格检索【国外】
+moduleId=1015;moduleName=逻辑检索【中国】
+moduleId=1020;moduleName=逻辑检索【国外】
+moduleId=1600;moduleName=专题数据库
+moduleId=9000;moduleName=文摘下载
+moduleId=9100;moduleName=全文下载
+moduleId=9200;moduleName=代码化下载
+moduleId=2000;moduleName=IPC分类导航
+moduleId=9999;moduleName=专利细缆

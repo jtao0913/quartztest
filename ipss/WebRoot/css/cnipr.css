@@ -1,0 +1,52 @@
+body {font-size:11pt}
+table {font-size:10pt}
+
+.t1 {
+	font-size: 12px;
+}
+.fieldbuttonnav {cursor:hand;
+ 			width:50;overflow-x:visible;overflow-y:visible;
+			border:1;background-color=transparent;vertical-algin:center; 
+			height:20;padding:3 0 0 0 ;}
+
+.fieldbuttonnavcurrent
+{
+	width:50;overflow-x:visible;overflow-y:visible;
+	cursor:default; 
+	color:#ff0000;
+	border:1;
+	background-color=transparent;
+	vertical-algin:center; 
+	height:20;
+	padding:3 0 0 0;
+}
+
+A:link { color:000000 ;  text-decoration: none}
+A:visited  {color: 3366ff;  text-decoration: none}
+A:hover {COLOR: #ff0000; TEXT-DECORATION: underline}
+.fieldbuttonw {cursor:hand; 
+			width=50;border:none;background-color:transparent;vertical-algin:center; 
+			height:20;padding:3 0 0 0 ;}
+
+
+.tablebutton
+{
+	cursor:hand; 
+	width=115;
+	border:none;
+	background-color:transparent;
+	vertical-algin:center; 
+	height:20;
+	padding:3 0 0 0;
+	font-size:9pt;
+}
+
+
+#tipBox {position: absolute;
+width: 400px;
+z-index: 100;
+border: 1pt black solid;
+font-family:??;
+font-size: 9pt;
+background: #FFFFE1;
+visibility: hidden}

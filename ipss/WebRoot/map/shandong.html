@@ -1,0 +1,159 @@
+<style type="text/css">
+.map {
+	width: 650px;
+	height: 650px;
+}
+</style>
+<script src="../analyse/echarts.min.js"></script>
+<script src="../map/shandong/shandong.js"></script>
+<script src="../analyse/theme/shine.js"></script>
+
+<div class="map" id="山东">
+
+<script>
+			function make_map(cityname, dom_id) {
+				achart = echarts.init(document.getElementById(dom_id));
+				var option = {
+					"title" : [ {
+						"textStyle" : {
+							"color" : "#000",
+							"fontSize" : 18
+						},
+						"subtext" : "",
+						"text" : cityname,
+						"top" : "auto",
+						"subtextStyle" : {
+							"color" : "#aaa",
+							"fontSize" : 12
+						},
+						"left" : "auto"
+					} ],
+					"legend" : [ {
+						"selectedMode" : "multiple",
+						"top" : "top",
+						"orient" : "horizontal",
+						"data" : [""],
+						"left" : "center",
+						"show" : true
+					} ],
+					"backgroundColor" : "#fff",
+					visualMap : {
+						min : 0,
+						max : 276342,
+						text : [ '高', '低' ],
+						realtime : false,
+						calculable : true,
+						inRange : {
+							color : [ 'lightskyblue', 'yellow', 'orangered' ]
+						}
+					},
+					"series" : [ {
+
+						name : '山东各市',
+						type : 'map',//type必须声明为 map 说明该图标为echarts 中map类型
+						map : '山东', //这里需要特别注意。如果是中国地图，map值为china，如果为各省市则为中文。这里用北京
+						aspectScale : 0.75, //长宽比. default: 0.75
+						zoom : 1.2,
+						//roam: true,
+						itemStyle : {
+							normal : {
+								label : {
+									show : true
+								}
+							},
+							emphasis : {
+								label : {
+									show : true
+								}
+							}
+						},
+						//	"mapType": cityname,
+						/*
+						 "mapType": cityname,
+						 "data": [],
+						 "name": "",
+						 "symbol": "circle",
+						 "type": "map",
+						 "roam": true
+						 */
+
+						data : [ {
+			                name: "青岛市",
+			                value: 276342
+			              },
+			              {
+			                name: "济南市",
+			                value: 201435
+			              },
+			              {
+			                name: "潍坊市",
+			                value: 105814
+			              },
+			              {
+			                name: "烟台市",
+			                value: 82991
+			              },
+			              {
+			                name: "济宁市",
+			                value: 63071
+			              },
+			              {
+			                name: "淄博市",
+			                value: 60753
+			              },
+			              {
+			                name: "威海市",
+			                value: 51233
+			              },
+			              {
+			                name: "临沂市",
+			                value: 44244
+			              },
+			              {
+			                name: "泰安市",
+			                value: 42399
+			              },
+			              {
+			                name: "东营市",
+			                value: 39341
+			              },
+			              {
+			                name: "滨州市",
+			                value: 33879
+			              },
+			              {
+			                name: "德州市",
+			                value: 28510
+			              },
+			              {
+			                name: "聊城市",
+			                value: 26830
+			              },
+			              {
+			                name: "菏泽市",
+			                value: 25227
+			              },
+			              {
+			                name: "枣庄市",
+			                value: 24355
+			              },
+			              {
+			                name: "莱芜市",
+			                value: 22408
+			              },
+			              {
+			                name: "日照市",
+			                value: 20081
+			              }]
+					} ]
+				};
+				achart.setOption(option);
+
+				achart.on('click', function(params) {
+					var city = params.name;
+					alert(city);
+				});
+			}
+			
+			make_map("山东", "山东");
+</script>

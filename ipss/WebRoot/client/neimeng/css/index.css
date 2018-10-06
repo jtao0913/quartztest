@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin: 0 auto;
+	background-image:url(../images/bg.png);
+	background-repeat:no-repeat;
+	max-width:1920px;
+	max-height:800px;
+	overflow:hidden;
+}
+
+.title{
+	margin: 0 auto;
+	margin-top:100px;
+	text-align:center;
+	position:relative;
+	z-index:999;
+}
+
+.h2{
+	margin:0 auto;
+	text-align:center;
+	margin-top:50px;
+	margin-bottom:50px;
+	font-size:40px;
+	font-family:"楷体";
+	font-weight:900;
+	color:#6099e8;
+	letter-spacing: 8px;
+	position:relative;
+	z-index:999;
+}
+
+
+
+.login-img{
+	margin: 0 auto;
+	margin-top:20px;
+	text-align:center;
+	width:350px;
+	height:290px;
+	background-color:#000;
+	border:1px solid #eae8e8;
+	opacity:0.3;
+	filter:Alpha(opacity=0.3);
+	padding-left:34px;
+	position:relative;
+	z-index:998;}
+	
+.login-bg{
+	margin: 0 auto;
+	text-align:center;
+	width:350px;
+	height:305px;
+	position:relative;top:-290px;
+	z-index:999;}
+
+.login-bg .login-xx{
+	color:fff;}
+
+.login-bg .login-xx p{
+	font-size:14px;
+	font-weight:900;
+	margin-top:30px;
+	margin-left:24px;
+	text-align:left;}
+
+.login-bg .login-xx .login-input{
+	width:290px;
+	height:26px;
+	margin-top:0px;
+	border-radius:8px;
+	border:1px solid #cad2db;
+	padding-left:10px;
+	color:#666666;}
+
+.login-bg .login-xx .dl{
+	margin-top:10px;
+	margin-left:180px;
+	width:122px;
+	height:32px;
+	background-color:#64a9ed;
+	color:#ffffff;
+	font-size:14px;
+	border:1px solid #7e7e7e;
+	border-radius:5px;
+	letter-spacing: 8px;}
+
+.img-1{
+	position:absolute;top:220px;}
+
+.img-2{
+	float:right;
+	margin-top:-400px;
+	margin-right:100px;
+	position:relative;
+	z-index:999;
+	}
+
+.img-3{
+	float:right;
+	margin-top:-600px;
+	margin-right:400px;}	
+
+.img-4{
+	position:absolute;top:90px;left:200px;
+	float:left;}
+
+.img-5{
+	position:absolute;top:10px;left:700px;}
+
+.img-6{
+	position:absolute;top:600px;left:580px;}
+	
+	
+/* footer */
+.footer{
+	margin: 0 auto;
+	width:100%;
+	text-align:center;
+	color:#FFFFFF;
+	max-width:1920px;
+	position:absolute;bottom:0px;}
+	
+.footer img{
+	margin: 0 auto;
+	text-align:center;
+	width:100%;}	
+	
+.footer span{
+	position:relative;top:60px;
+	font-size:12px;
+	font-family:"宋体";
+	letter-spacing: 2px;}
+	
+/*  动画效果*/
+
+/* 弹入 */
+.a-bouncein{
+	-webkit-animation:5s ease-out backwards;-moz-animation:5s ease-out backwards;-ms-animation:5s ease-out backwards;animation:5s ease-out backwards;
+	-webkit-animation-name:bouncein;-moz-animation-name:bouncein;-ms-animation-name:bouncein;animation-name:bouncein;}
+@-webkit-keyframes bouncein{
+    0%{opacity:0;-webkit-transform:scale(0.3);}
+    50%{opacity:1;-webkit-transform:scale(1.05);}
+    70%{-webkit-transform:scale(0.9);}
+    100%{-webkit-transform:scale(1);}
+}
+@-moz-keyframes bouncein{
+    0%{opacity:0;-moz-transform:scale(0.3);}
+    50%{opacity:1;-moz-transform:scale(1.05);}
+    70%{-moz-transform:scale(0.9);}
+    100%{-moz-transform:scale(1);}
+}
+@-ms-keyframes bouncein{
+    0%{opacity:0;-ms-transform:scale(0.3);}
+    50%{opacity:1;-ms-transform:scale(1.05);}
+    70%{-ms-transform:scale(0.9);}
+    100%{-ms-transform:scale(1);}
+}
+@keyframes bouncein{
+    0%{opacity:0;transform:scale(0.3);}
+    50%{opacity:1;transform:scale(1.05);}
+    70%{transform:scale(0.9);}
+    100%{transform:scale(1);}
+}
+
+/* 淡入-从上 */
+.a-fadeinT{
+	-webkit-animation:2s ease-out backwards;-moz-animation:2s ease-out backwards;-ms-animation:2s ease-out backwards;animation:2s ease-out backwards;
+	-webkit-animation-name:fadeinT;-moz-animation-name:fadeinT;-ms-animation-name:fadeinT;animation-name:fadeinT;}
+@-webkit-keyframes fadeinT{
+    0%{opacity:0;-webkit-transform:translateY(-100px);}
+    100%{opacity:1;-webkit-transform:translateY(0);}
+}
+@-moz-keyframes fadeinT{
+    0%{opacity:0;-moz-transform:translateY(-100px);}
+    100%{opacity:1;-moz-transform:translateY(0);}
+}
+@-ms-keyframes fadeinT{
+    0%{opacity:0;-ms-transform:translateY(-100px);}
+    100%{opacity:1;-ms-transform:translateY(0);}
+}
+@keyframes fadeinT{
+    0%{opacity:0;transform:translateY(-100px);}
+    100%{opacity:1;transform:translateY(0);}
+}
+
+

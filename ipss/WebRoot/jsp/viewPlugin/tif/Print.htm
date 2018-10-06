@@ -1,0 +1,151 @@
+<HTML>
+<HEAD>
+<TITLE>专利信息服务平台-打印</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<script Language="JavaScript">
+var pwindow = window.dialogArguments;
+
+var enterval = window.dialogArguments;
+var m_strPage = enterval[2];
+//alert("currentPage="+enterval[3]);
+var currentPage = enterval[3];
+
+//alert(window.dialogArguments);
+if(window.dialogArguments[3]=="wgShow"){//alert(window.dialogArguments[3]);
+}
+function CheckSelect()
+{
+	var strSelect;
+	for(var i=0;i<document.all.rdSelect.length;i++)
+	{
+		if((window.dialogArguments[3]!="wgShow") && i==2){
+				//alert("wgShow 2");
+				if(document.all.rdSelect[i].checked)
+				{
+					strSelect = document.all.rdSelect[i].value;
+					if(strSelect == '1')
+					{
+						if(document.all.txtPrintPages.disabled)
+							return;
+						else
+							document.all.txtPrintPages.disabled = true;
+					}
+					else
+					{
+						if(document.all.txtPrintPages.disabled)
+							document.all.txtPrintPages.disabled = false;
+						else
+							return;
+					}
+					if(strSelect == '3')
+						document.all.txtStartPrintPageNumber.focus();
+					return;
+				}
+		}
+	}
+}
+
+function AutoChecked()
+{
+	if(window.dialogArguments[3]!="wgShow"){
+		if(document.all.rdSelect[2].checked)
+			return;
+		else
+			document.all.rdSelect[2].checked = true;
+		CheckSelect();
+	}	
+}
+
+function CheckStatus()
+{
+	if(document.all.txtPrintPages.disabled)
+		alert('打印整件说明书时无法设定打印页数！');
+}
+
+function OnSetPrintOption()
+{
+	var strSelect;
+	var strStartPageNumber;
+	var strPrintPages;
+	for(var i=0;i<document.all.rdSelect.length;i++)
+	{
+	//alert("dialogArguments[3]:"+dialogArguments[3]);
+	//alert("i:"+i);
+		//if(window.dialogArguments[3]!="wgShow"){
+		//		if(document.all.rdSelect[i].checked)
+		//			{strSelect = document.all.rdSelect[i].value;}
+		//}
+		if(document.all.rdSelect[i].checked)
+		{	strSelect = document.all.rdSelect[i].value;	}
+	}
+	//alert("strSelect:"+strSelect);
+	strStartPageNumber = document.all.txtStartPrintPageNumber.value;
+	strPrintPages = document.all.txtPrintPages.value;
+	
+//alert(strSelect);
+	if(strSelect=="2" || strSelect==2){
+		strStartPageNumber=currentPage;
+	}
+	
+//alert(strStartPageNumber);
+//alert(strPrintPages);
+
+	if((strSelect == "2" && (parseInt(strPrintPages) > m_strPage || parseInt(strPrintPages) <= 0)) ||(strSelect == "3" && (parseInt(strStartPageNumber) + parseInt(strPrintPages) > m_strPage+1) || parseInt(strStartPageNumber) <= 0 || parseInt(strPrintPages) <= 0))
+	{
+		alert('您输入的页码有错误，此说明书总页数为：' + m_strPage + '页');
+		return false;
+	}
+	
+	//alert("strSelect:"+strSelect);
+	//alert("strStartPageNumber:"+strStartPageNumber);
+	//alert("strPrintPages:"+strPrintPages);
+	
+	var PrintArgs = new Array(strSelect, strStartPageNumber, strPrintPages);
+	window.returnValue = PrintArgs;
+	window.close();
+}
+
+</script>
+<style type="text/css">
+body, a, table, div, span, td, th, input, select{font:9pt;font-family: "宋体", Verdana, Arial, Helvetica, sans-serif;}
+body {padding:5px}
+</style>
+</HEAD>
+<BODY bgcolor="menu">
+<center><font size="3"><B>打印设置</B></font></center><br>
+	<table width="226" border="0" align="center">
+        <tr>
+	  <td>	<fieldset>
+	<legend>设置打印选项</legend>
+	  <table width="226" border="0">
+        <tr height="26">
+	  <td style="cursor:hand"><input type="radio" name="rdSelect" value="1" onFocus="CheckSelect();" checked id="s1"><label for="s1">&nbsp;打印整件说明书</label></td>
+        </tr>
+<script>
+  if(window.dialogArguments[3]!="wgShow"){
+	  document.write("<tr height='26'><td style='cursor:hand'><input type='radio' name='rdSelect' value='2' onFocus='CheckSelect();' id='s2'><label for='s2'>&nbsp;从当前页开始打印</label></td></tr>");
+  }
+</script>
+	  
+        <tr height="26">
+          <td style="cursor:hand"><input type="radio" name="rdSelect" value="3" onFocus="CheckSelect();" id="s3"><label for="s3">&nbsp;指定打印起始页</label>&nbsp;<input name="txtStartPrintPageNumber" type="text" size="4" onFocus="AutoChecked();" value="1"></td>
+        </tr>
+        <tr height="26">
+          <td>&nbsp;&nbsp;共打印&nbsp;<input name="txtPrintPages" type="text" size="4" value="1">&nbsp;页</td>
+        </tr>
+  </table>
+        </fieldset>
+        </td>
+        </tr>
+        <tr>
+        <td align="center">
+        <input id="btnok" type=button value="确定" onclick="OnSetPrintOption()" style="width:78px">
+		<input id="btncancel" type=button value="取消" onclick="window.close();" style="width:78px">
+        </td>
+        </tr>
+        </table>
+</BODY>
+</HTML>
+<Script Language="JavaScript">
+	//CheckSelect()
+</Script>

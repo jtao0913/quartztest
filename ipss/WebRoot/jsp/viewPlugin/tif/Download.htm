@@ -1,0 +1,181 @@
+<HTML>
+<HEAD>
+<TITLE>专利信息服务平台-下载</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<script>
+var m_strSavePath = "";
+var m_strUrl="";
+var m_strPage="";
+var m_strAPO;
+
+var rwin;
+
+
+function PrepareArgs(strSelect, txtBeginPageNumber, txtEndPageNumber)
+{
+	if(strSelect=="1" || strSelect==1){
+		m_strUrl = CreateUrl('1');
+		return true;
+	}
+	
+	if(strSelect=="2" || strSelect==2){
+		m_strUrl = CreateUrl(txtBeginPageNumber);
+		
+
+
+		if(parseInt(txtBeginPageNumber) < 1 || parseInt(txtBeginPageNumber) > parseInt(txtEndPageNumber))
+		{
+			alert('请重新输入初始页码');
+			document.all.txtBeginPage.focus();
+			return false;
+		}
+		
+		if((parseInt(txtEndPageNumber) < parseInt(txtBeginPageNumber)) || (parseInt(txtEndPageNumber) > parseInt(m_strPage)))
+		{
+			alert('请重新输入终止页码');
+			document.all.txtEndPage.focus();
+			return false;	
+		}
+		m_strPage = parseInt(txtEndPageNumber) - parseInt(txtBeginPageNumber) + 1;
+		return true;
+	}
+}
+
+function CreateUrl(str)
+{
+	var sUrl = m_strUrl;
+	var sPage = str;
+	
+	sUrl = sUrl.substring(0,sUrl.lastIndexOf('/')+1);
+
+	for(var i=0;i<(6-sPage.length);i++)
+	{
+		sUrl = sUrl + "0";
+	}
+	sUrl = sUrl + str + ".tif";
+	return sUrl;
+}
+
+function AutoChecked()
+{
+	if(document.all.rdSelect[1].checked)
+		return;
+	else
+		document.all.rdSelect[1].checked = true;
+}
+
+function getSavePath()
+{
+	var strSavePath = PatTifAcTiveX1.CtrGetPath();
+	if(strSavePath != null && strSavePath != "")
+		document.all.txtSavePath.value = strSavePath;
+}
+
+function OnSetDownloadOption()
+{
+	m_strSavePath = document.all.txtSavePath.value;
+	if(m_strSavePath == null || m_strSavePath == "")
+	{
+		alert('请先选择文件保存路径');
+		document.all.btnPath.focus();
+		return false;
+	}
+
+	document.DownloadInfo.strSavePath.value=document.all.txtSavePath.value;
+	
+	var strSelect;
+	var txtBeginPageNumber;
+	var txtEndPageNumber;
+	var strSavePath;
+	
+	for(var i=0;i<document.all.rdSelect.length;i++)
+	{
+		if(document.all.rdSelect[i].checked)
+			strSelect = document.all.rdSelect[i].value;
+	}
+	txtBeginPageNumber = document.all.txtBeginPage.value;
+	txtEndPageNumber = document.all.txtEndPage.value;
+	if(PrepareArgs(strSelect, txtBeginPageNumber, txtEndPageNumber)){
+		document.DownloadInfo.strAPO.value = m_strAPO;
+		document.DownloadInfo.strUrl.value = m_strUrl;
+		document.DownloadInfo.strPage.value = m_strPage;
+		
+	//	strSavePath = document.all.txtSavePath.value;
+	
+		//生成一个随机数的窗口名称
+		var theDate =new Date();
+		var random=theDate.getTime();
+	
+		var DownloadArgs = new Array(m_strAPO, m_strUrl, m_strPage, m_strSavePath);
+		window.returnValue = DownloadArgs;
+		window.close();
+	}
+//	rwin = window.open("MultiDownloadForm.jsp",random,"toolbar=no,titlebar=no,location=no,status=no,menubar=no,resizable=no,scrollbars=no,left=0,width=500,height=330");
+}
+
+function StartDownload()
+{
+	rwin.downFrame.document.all.PatTifAcTiveX1.InitBatchDown();
+	rwin.downFrame.document.all.PatTifAcTiveX1.SetDownLoadInfo(m_strSavePath, m_strUrl, m_strPage, m_strAPO);
+	rwin.downFrame.document.all.PatTifAcTiveX1.batchdown();
+	window.close();
+}
+
+function OnPageLoad()
+{
+	var enterval = window.dialogArguments;
+	m_strUrl = enterval[0];
+	m_strPage = enterval[1];
+//alert(m_strPage);
+	m_strAPO = enterval[2];
+	document.all.txtEndPage.value = m_strPage;
+}
+</script>
+<style type="text/css">
+body, a, table, div, span, td, th, input, select{font:9pt;font-family: "宋体", Verdana, Arial, Helvetica, sans-serif;}
+body {padding:5px}
+</style>
+</HEAD>
+<BODY bgcolor="#ECE9D8" Onload="OnPageLoad()">
+<form name="DownloadInfo" action="" method="post" target="_blank">
+<Script>
+document.write("<input type=hidden name='strAPO' value='"+m_strAPO+"'>");
+document.write("<input type=hidden name='strUrl' value='"+m_strUrl+"'>");
+document.write("<input type=hidden name='strPage' value='"+m_strPage+"'>");
+document.write("<input type=hidden name='strSavePath' value=''>");
+</Script>
+</form>
+<object id="PatTifAcTiveX1" height=0 width=0 classid="clsid:C7D7CC85-4485-41AC-BBFB-39BD95481DAE" border="0"></object>
+<center><font size="3"><B>说明书下载设置</B></font></center><br>
+  <table width="335" border="0" align="center">
+    <tr>
+      <td>
+      <fieldset>
+      <legend>设置下载选项</legend>
+  <table width="335" border="0" align="center">
+    <tr height="28">
+      <td style="cursor:hand"><input type="radio" name="rdSelect" value="1" checked id="c1"><label for="c1">&nbsp;下载整件说明书</label></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr height="28">
+      <td style="cursor:hand"><input type="radio" name="rdSelect" value="2" id="c2"><label for="c2">&nbsp;下载指定页</label></td>
+      <td>从&nbsp;<input type=text name="txtBeginPage" size=4 border=1 onFocus="AutoChecked();" value="1">&nbsp;到&nbsp;<input type="text" name="txtEndPage" size="4" border="1" onFocus="AutoChecked();" value=""></td>
+    </tr>
+    <tr height="28">
+      <td>&nbsp;说明书保存路径:</td>
+      <td align="left"><input type="text" name="txtSavePath" value=""><input id="btnPath" type=button value="浏览" onclick="getSavePath()" style="width:48px"></td>
+    </tr>
+  </table>
+  </fieldset>
+  </td>
+  </tr>
+        <tr>
+        <td align="center">
+        <input id="btnok" type=button value="确定" onclick="OnSetDownloadOption()" style="width:78px">
+		  <input id="btncancel" type=button value="取消" onclick="window.close();" style="width:78px">
+	<input id="btnStart" type=hidden value="" onclick="StartDownload()">
+        </td>
+        </tr>
+  </table>
+</BODY>
+</HTML>

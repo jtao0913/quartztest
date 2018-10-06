@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>陕西省行业专利数据库登陆页面</title>
+<link href="images/css.css" type=text/css rel=stylesheet />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/focusslide.js"></script>
+<script type="text/javascript">  
+ window.onload = function()   
+ {  
+  labels = document.getElementById('rd').getElementsByTagName('label');  
+  radios = document.getElementById('rd').getElementsByTagName('input');  
+  for(i=0,j=labels.length ; i<j ; i++)  
+  {  
+   labels[i].onclick=function()   
+   {  
+    if(this.className == '') {  
+     for(k=0,l=labels.length ; k<l ; k++)  
+     {  
+      labels[k].className='';  
+      radios[k].checked = false;  
+     }  
+     this.className='checked';  
+     try{  
+        document.getElementById(this.name).checked = true;  
+     } catch (e) {}  
+    }  
+   }  
+  }  
+ }  
+ 
+</script>  
+</head>
+
+<body>
+<div class="top01"></div>
+<div id="top"><div id="div1"><img src="images/logo01.png"  usemap="#Map" border="0" />
+    <map name="Map" id="Map">
+      <area shape="rect" coords="8,10,359,68" href="/" />
+    </map>
+    
+</div>
+</div>
+<div id="div22">
+  <div id="div2">
+    <div id="denglu" style="FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/01.png')">
+                <div id="dldiv">
+                	
+                  <div class="wz">登录到您的帐户</div>
+               	  
+                  <form class="biaodan" action="" method="get">
+                      					<br />&nbsp;用户名<br />
+                    <div class="bja" style=" margin-bottom:10px;"> 
+                    	 <input class="NoneInput" type="text"  style="background-image:url(images/human.png); background-repeat:no-repeat;" />
+                    </div>
+                   					   &nbsp;密&nbsp;&nbsp;&nbsp;码<br />
+                     <div class="bja"> 
+                          <input class="NoneInput" name="" type="password" style="background-image:url(images/lock.png); background-repeat:no-repeat;"/>
+                     </div>
+
+                    <input class="ButtonCSS" type="submit" value="登&nbsp;&nbsp;陆" />
+                    <div class="wz02">忘记用户名或密码</div>
+                    </form>
+               	  
+                    <script type="text/javascript">
+                        /* 输入框获取 && 失去焦点时 样式控制 */
+                        $('.NoneInput').focus(function(){
+                            $(this).parent().attr('class','bjb');
+                        }).blur(function(){
+                            $(this).parent().attr('class','bja');
+                        });
+                    </script>
+        </div>
+            
+            </div> 
+   	<!--banner开始-->
+            
+            
+            </div>
+
+<!--banner结束-->    	
+    
+    </div>
+</div>
+
+<div class="links_gsf">
+	<div class="links_con">
+        <img src="images/menu01.png" width="921" height="368" border="0" usemap="#Map2">
+        <map name="Map2">
+        <area shape="rect" coords="560,259,768,349" href="#">
+        <area shape="rect" coords="330,259,538,349" href="#">
+        <area shape="rect" coords="101,259,309,349" href="#">
+        <area shape="rect" coords="701,149,909,239" href="#">
+        <area shape="rect" coords="701,38,909,128" href="#">
+        <area shape="rect" coords="470,149,678,239" href="#">
+        <area shape="rect" coords="470,38,678,128" href="#">
+        <area shape="rect" coords="240,148,448,238" href="#">
+        <area shape="rect" coords="240,38,448,128" href="#">
+        <area shape="rect" coords="10,148,218,238" href="#">
+          <area shape="rect" coords="10,38,218,128" href="#">
+        </map>
+    </div>
+</div>
+
+
+<div id="di">
+    <div id="div4">主办：陕西省知识产权局&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      项目实施：中国杨凌农业知识产权信息中心&nbsp;&nbsp;
+      安康市知识产权办公室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+      技术支持：知识产权出版社
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+</body>
+</html>
